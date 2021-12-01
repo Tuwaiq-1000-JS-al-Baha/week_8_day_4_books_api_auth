@@ -1,0 +1,22 @@
+[
+    {
+      "title": "product post 1",
+      "description": "test description!!",
+      "price": 12413
+    },
+    {
+      "title": "product test 2",
+      "description": "test description!!",
+      "price": 2211
+    },
+    {
+      "title": "product test 3",
+      "description": "test description!!",
+      "price": 333
+    },
+    {
+      "title": "product test 4",
+      "description": "test description!!",
+      "price": 11244
+    }
+  ]
