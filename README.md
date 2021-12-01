@@ -1,22 +1,19 @@
-# week_8_day_4_books_api_auth
+# week_8_day_3_posts_api
 
 create an api that have:
-* get books
-* get one book by id
-* add a book
-* edit book
-* delete book
-
-when you get books, you get also information about the owner
+* get posts
+* get one post by id
+* edit post
+* delete post
 
 
-example book:
+example post:
 
 ```json
 {
-  "title": "Harry Potter",
-  "description": "a story of magic",
+  "title": "Example title",
+  "body": "Example body",
   "image": "https://image.com/12345.png",
-  "author": "J.K Rowling"
+  "owner": "Mohammed"
 }
 ```
