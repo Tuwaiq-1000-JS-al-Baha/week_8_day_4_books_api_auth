@@ -6,7 +6,7 @@ const postSchema = new mongoose.Schema({
   title: String,
   description: {
     type: String,
-    default: "no body",
+    default: "no description",
   },
   author: {
     type: mongoose.Types.ObjectId,

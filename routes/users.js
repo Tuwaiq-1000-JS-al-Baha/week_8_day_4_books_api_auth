@@ -55,7 +55,7 @@ router.post("/login", async (req, res) => {
 router.get("/profile", checkToken, async (req, res) => {
   try {
     const user = await User.findById(req.userId).select("-__v -password")
-    if (!user) return res.status(404).jsoon("user not found")
+    if (!user) return res.status(404).json("user not found")
 
     res.json(user)
   } catch (error) {
