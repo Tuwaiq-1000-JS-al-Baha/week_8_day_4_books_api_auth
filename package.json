@@ -1,0 +1,15 @@
+{
+  "name": "week_8_day_4_books_api_auth",
+  "version": "1.0.0",
+  "description": "create an api that have:\r * get books\r * get one book by id\r * add a book\r * edit book\r * delete book",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RHBSLH/week_8_day_4_books_api_auth.git"
+    "mongoose": "^6.0.14",
+    "nodemon": "^2.0.15"
+  }
+}
