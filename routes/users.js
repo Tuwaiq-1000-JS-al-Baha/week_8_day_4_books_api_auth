@@ -7,6 +7,7 @@ const checkToken = require("../middleware/checkToken")
 const checkId = require("../middleware/checkId")
 
 router.post("/signup", async (req, res) => {
+  
   try {
     const { firstName, lastName, email, password, avatar } = req.body // م يحتاج نسوي كونست ع طول
 
