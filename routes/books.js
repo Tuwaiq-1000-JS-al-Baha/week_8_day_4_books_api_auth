@@ -55,9 +55,9 @@ router.put("/:id",checkId, checkToken, async (req, res) => {
     // if (!mongoose.Types.ObjectId.isValid(id)) {
     //   return res.status(400).json("book not found")
     // }
-    const { title, body, image } = req.body
+    const { title, description,auther, image } = req.body
 
-    const book = await Book.findByIdAndUpdate( req.params.id, { $set: { title, body, image },}, { new: true })
+    const book = await Book.findByIdAndUpdate( req.params.id, { $set: { title, description,auther, image },}, { new: true })
     if (!book) return res.status(404).json("book not found")
 
     res.json(book)

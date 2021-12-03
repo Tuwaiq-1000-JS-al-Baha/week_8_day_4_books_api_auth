@@ -1,5 +1,6 @@
 const express = require("express")
 const bodyParser = require("body-parser")
+const cors=require("cors")
 const books = require("./routes/books")
 const mongoose = require("mongoose")
 require("dotenv").config()
@@ -22,8 +23,9 @@ app.use(bodyParser.json())
 
 app.use("/api/books", books)
 app.use("/api/auth", users)
+app.use(cors())
 
 
-app.listen(3000, () => {
-  console.log("server is listening on port :" + 3000)
+app.listen(5000, () => {
+  console.log("server is listening on port :" + 5000)
 })
