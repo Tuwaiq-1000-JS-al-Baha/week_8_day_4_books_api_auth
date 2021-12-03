@@ -65,4 +65,16 @@ router.get("/profile",checkToken, async (req, res) => {
     res.status(500).json(error.message);
   }
 });
+
+router.get("/profile",checkToken, async (req, res) => {
+  try {
+
+    const user = await User.findById(req.userId).select("-__v -password");
+    if (!user) return res.status(404).json("user not found");
+
+    res.json(user);
+  } catch (error) {
+    res.status(500).json(error.message);
+  }
+});
 module.exports = router;
