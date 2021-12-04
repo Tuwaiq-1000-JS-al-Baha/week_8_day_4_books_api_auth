@@ -3,6 +3,7 @@ const router = express.Router()
 const { Book, bookJoi } = require("../models/Book")
 const checkId = require("../middleware/checkId")
 const checkToken = require("../middleware/checkToken")
+const { User } = require("../models/User")
 router.get("/", async (req, res) => {
   try {
     const books = await Book.find().sort("-releaseYear").populate({
@@ -38,6 +39,7 @@ router.post("/", checkToken, async (req, res) => {
       owner: req.userId,
     })
     await book.save()
+    await User.findByIdAndUpdate(req.userId, { $push: { books: book._id } })
     res.json(book)
   } catch (error) {
     res.status(500).send(error.message)

@@ -52,7 +52,10 @@ router.get("/profile", async (req, res) => {
     const token = req.header("Authorization")
     const decryptedToken = jwt.verify(token, process.env.JWT_SECRET_KEY)
     const id = decryptedToken.id
-    const userFound = await User.findById(id).select("-__v -password")
+    const userFound = await User.findById(id).select("-__v -password").populate({
+      path: "books",
+      select: "-__v",
+    })
 
     res.send(userFound)
   } catch (error) {
