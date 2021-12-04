@@ -18,6 +18,6 @@ app.use(cors())
 app.use("/api/books",books)
 app.use("/api/auth",users)
 
-app.listen(5000,()=>{
-    console.log("server is listining on port:",5000)
+app.listen(7000,()=>{
+    console.log("server is listining on port:",7000)
 })
