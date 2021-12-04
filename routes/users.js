@@ -27,7 +27,7 @@ router.post("/signup", async (req, res) => {
     })
     await user.save()
 
-    delete user.password
+    delete user._doc.password
 
     res.json(user)
   } catch (error) {

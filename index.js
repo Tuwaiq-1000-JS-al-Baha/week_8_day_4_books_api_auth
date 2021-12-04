@@ -1,8 +1,8 @@
 const express = require("express")
-const bodyParser = require("body-parser")
-const books = require("./routes/books")
 const mongoose = require("mongoose")
 require("dotenv").config()
+const bodyParser = require("body-parser")
+const books = require("./routes/books")
 const users = require("./routes/users")
 
 mongoose
