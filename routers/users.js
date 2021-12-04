@@ -4,6 +4,7 @@ const bcrypt=require("bcrypt")
 const jwt=require("jsonwebtoken")
 const router =express.Router()
 const{User,signupJoi,loginJoi}=require("../models/User")
+const checkToken = require("../midlewaer/checkToken")
 
 
 router.post("/signup",async(req,res)=>{
@@ -45,6 +46,16 @@ router.post("/login",async(req,res)=>{
 
         const token=jwt.sign({sub:user._id},process.env.JWT_SECRET_KEY,{expiresIn:"15d"})
         res.json(token)
+    }catch(error){
+        res.status(500).json(error.message)
+    }
+})
+router.get("/profile",checkToken,async(req,res)=>{
+    try{
+        const user=await User.findById(req.userId).select("-__v -password")
+        if(!user) return res.status(404).send("user not found")
+
+        res.send(user)
     }catch(error){
         res.status(500).json(error.message)
     }
