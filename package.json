@@ -1,0 +1,29 @@
+{
+  "name": "week_8_day_3_posts_api",
+  "version": "1.0.0",
+  "description": "create an api that have:\r * get posts\r * get one post by id\r * edit post\r * delete post",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Najmah23/week_8_day_3_posts_api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Najmah23/week_8_day_3_posts_api/issues"
+  },
+  "homepage": "https://github.com/Najmah23/week_8_day_3_posts_api#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "joi": "^17.4.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.14",
+    "nodemon": "^2.0.15"
+  }
+}
